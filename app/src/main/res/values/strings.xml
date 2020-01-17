@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Equipo2_CRUDapp_Android</string>
+
+    <string name="imageViewSoftwareImageDescription"> Image of the software </string>
+
+    <string name="promptSoftwareName"> Software name </string>
+    <string name="promptParentSoftware"> Parent software </string>
+    <string name="promptPublisher"> Publisher </string>
+    <string name="promptReleaseDate"> Release date </string>
+    <string name="promptDescription"> Brief description of the software </string>
+
+    <string name="choiceParentSoftwareProgram"> Program </string>
+    <string name="choiceParentSoftwareGame"> Game </string>
+    <string name="choiceParentSoftwareExtension"> Extension </string>
+
+    <string name="textViewSoftwareNameWarning"> *Software name is not valid </string>
+    <string name="textViewSoftwareTypeWarning"> *Software type is not valid </string>
+    <string name="textViewParentSoftwareWarning"> *Parent software is not valid </string>
+    <string name="textViewPublisherWarning"> *Publisher is not valid </string>
+    <string name="textViewReleaseDateWarning"> *Release date is not valid </string>
+    <string name="textViewDescriptionWarning"> *Description is not valid </string>
+
+    <string name="buttonCancel"> Cancel </string>
+    <string name="buttonAccept"> Accept </string>
 </resources>
