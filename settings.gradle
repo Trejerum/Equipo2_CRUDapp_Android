@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='Equipo2_CRUDapp_Android'
