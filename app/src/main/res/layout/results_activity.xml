@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textViewResultsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:text="Search Results"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextResultsSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter text to search..."
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/buttonResultsSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@android:string/search_go" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="128dp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonResultsName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name" />
+
+            <RadioButton
+                android:id="@+id/radioButtonResultsPublisher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Publisher" />
+
+            <RadioButton
+                android:id="@+id/radioButtonResultsDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBoxResultsProgram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Program" />
+
+            <CheckBox
+                android:id="@+id/checkBoxExtension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Extension" />
+
+            <CheckBox
+                android:id="@+id/checkBoxResultsGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Game" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="94dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonResultsAscendent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ascendent" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDescendent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descendent" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewResultsListTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Results:" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
