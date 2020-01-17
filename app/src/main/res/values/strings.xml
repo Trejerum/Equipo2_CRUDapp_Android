@@ -22,4 +22,10 @@
 
     <string name="buttonCancel"> Cancel </string>
     <string name="buttonAccept"> Accept </string>
+
+    <string-array name="SoftwareTypes">
+        <item> Program </item>
+        <item> Game </item>
+        <item> Extension </item>
+    </string-array>
 </resources>

@@ -17,6 +17,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
 
+    <TextView
+        android:id="@+id/textViewSoftwareNameWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewSoftwareNameWarning"
+        app:layout_constraintBottom_toTopOf="@+id/editTextSoftwareName"
+        tools:layout_editor_absoluteX="56dp" />
+
     <EditText
         android:id="@+id/editTextSoftwareName"
         android:layout_width="300dp"
@@ -29,6 +37,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSoftwareImage" />
 
+    <TextView
+        android:id="@+id/textViewSoftwareType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewSoftwareTypeWarning"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSoftwareType"
+        tools:layout_editor_absoluteX="56dp" />
+
     <Spinner
         android:id="@+id/spinnerSoftwareType"
         android:layout_width="300dp"
@@ -37,6 +53,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSoftwareName" />
+
+    <TextView
+        android:id="@+id/textViewParentSoftware"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewParentSoftwareWarning"
+        app:layout_constraintBottom_toTopOf="@+id/autoCompleteTextViewParentSoftware"
+        tools:layout_editor_absoluteX="56dp" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextViewParentSoftware"
@@ -49,6 +73,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerSoftwareType" />
 
+    <TextView
+        android:id="@+id/textViewPublisherWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewPublisherWarning"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPublisher"
+        tools:layout_editor_absoluteX="57dp" />
+
     <EditText
         android:id="@+id/editTextPublisher"
         android:layout_width="300dp"
@@ -60,6 +92,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextViewParentSoftware" />
+
+    <TextView
+        android:id="@+id/textViewReleaseDateWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewReleaseDateWarning"
+        app:layout_constraintBottom_toTopOf="@+id/editTextReleaseDate"
+        tools:layout_editor_absoluteX="57dp" />
 
     <EditText
         android:id="@+id/editTextReleaseDate"
@@ -74,6 +114,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPublisher" />
+
+    <TextView
+        android:id="@+id/textViewDescriptionWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewDescriptionWarning"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
+        tools:layout_editor_absoluteX="56dp" />
 
     <EditText
         android:id="@+id/editTextDescription"
@@ -108,53 +156,5 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonAccept"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
-
-    <TextView
-        android:id="@+id/textViewSoftwareNameWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewSoftwareNameWarning"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSoftwareName"
-        tools:layout_editor_absoluteX="56dp" />
-
-    <TextView
-        android:id="@+id/textViewSoftwareType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewSoftwareTypeWarning"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerSoftwareType"
-        tools:layout_editor_absoluteX="56dp" />
-
-    <TextView
-        android:id="@+id/textViewParentSoftware"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewParentSoftwareWarning"
-        app:layout_constraintBottom_toTopOf="@+id/autoCompleteTextViewParentSoftware"
-        tools:layout_editor_absoluteX="56dp" />
-
-    <TextView
-        android:id="@+id/textViewPublisherWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewPublisherWarning"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPublisher"
-        tools:layout_editor_absoluteX="57dp" />
-
-    <TextView
-        android:id="@+id/textViewReleaseDateWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewReleaseDateWarning"
-        app:layout_constraintBottom_toTopOf="@+id/editTextReleaseDate"
-        tools:layout_editor_absoluteX="57dp" />
-
-    <TextView
-        android:id="@+id/textViewDescriptionWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewDescriptionWarning"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
-        tools:layout_editor_absoluteX="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
