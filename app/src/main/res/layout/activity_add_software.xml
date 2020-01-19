@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewSoftwareImage" />
 
     <TextView
-        android:id="@+id/textViewSoftwareType"
+        android:id="@+id/textViewSoftwareTypeWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textViewSoftwareTypeWarning"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextSoftwareName" />
 
     <TextView
-        android:id="@+id/textViewParentSoftware"
+        android:id="@+id/textViewParentSoftwareWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textViewParentSoftwareWarning"

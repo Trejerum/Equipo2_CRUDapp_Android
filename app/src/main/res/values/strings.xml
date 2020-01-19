@@ -20,6 +20,8 @@
     <string name="textViewReleaseDateWarning"> *Release date is not valid </string>
     <string name="textViewDescriptionWarning"> *Description is not valid </string>
 
+    <string name="EmptyFieldWarning"> *This field is empty </string>
+
     <string name="buttonCancel"> Cancel </string>
     <string name="buttonAccept"> Accept </string>
 
