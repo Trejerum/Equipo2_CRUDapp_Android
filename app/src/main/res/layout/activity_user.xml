@@ -107,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="*Login not valid"
-        android:textColor="#F44336"
+        android:textColor="@color/error"
         app:layout_constraintBottom_toTopOf="@+id/editTextLogin"
         app:layout_constraintStart_toEndOf="@+id/textViewLogin" />
 
@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="*Name not valid"
-        android:textColor="#F44336"
+        android:textColor="@color/error"
         app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintStart_toEndOf="@+id/textViewName" />
 
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="*Email Not Valid"
-        android:textColor="#F44336"
+        android:textColor="@color/error"
         app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintStart_toEndOf="@+id/textViewEmail" />
 
