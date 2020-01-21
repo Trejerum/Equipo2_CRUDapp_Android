@@ -1,4 +1,4 @@
-package com.example.equipo2_crudapp_android;
+package com.example.equipo2_crudapp_android.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.equipo2_crudapp_android.R;
+
+/**
+ * Controller for SignInActivity
+ * @author Diego Corral
+ */
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
     private TextView textViewLoginWarning;

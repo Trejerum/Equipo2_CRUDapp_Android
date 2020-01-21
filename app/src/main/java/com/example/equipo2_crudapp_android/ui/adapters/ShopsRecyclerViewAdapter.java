@@ -1,4 +1,4 @@
-package com.example.equipo2_crudapp_android;
+package com.example.equipo2_crudapp_android.ui.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.equipo2_crudapp_android.R;
+
 import java.util.ArrayList;
 
+/**
+ * Adapter for the shops recyclerView
+ * @author Diego Corral
+ */
 public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<ShopsRecyclerViewAdapter.ViewHolder>{
 
     private ArrayList<String> shopsNames = new ArrayList<>();

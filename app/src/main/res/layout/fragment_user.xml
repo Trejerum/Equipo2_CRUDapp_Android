@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity">
+    tools:context="tool_bar_ui.user.UserFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -165,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonChangePassword"
         android:layout_width="82dp"
         android:layout_height="45dp"
         android:layout_marginTop="44dp"

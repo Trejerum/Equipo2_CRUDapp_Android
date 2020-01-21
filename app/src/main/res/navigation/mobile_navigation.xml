@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.equipo2_crudapp_android.tool_bar_ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_user"
+        android:name="com.example.equipo2_crudapp_android.tool_bar_ui.user.UserFragment"
+        android:label="@string/menu_user"
+        tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/nav_add_software"
+        android:name="com.example.equipo2_crudapp_android.tool_bar_ui.add_software.AddSoftwareFragment"
+        android:label="@string/menu_add_software"
+        tools:layout="@layout/fragment_add_software" />
+
+    <fragment
+        android:id="@+id/nav_shops"
+        android:name="com.example.equipo2_crudapp_android.tool_bar_ui.shops.ShopsFragment"
+        android:label="@string/menu_shops"
+        tools:layout="@layout/fragment_shops" />
+
+    <fragment
+        android:id="@+id/nav_wish_list"
+        android:name="com.example.equipo2_crudapp_android.tool_bar_ui.wishlist.WishListFragment"
+        android:label="@string/menu_wish_list"
+        tools:layout="@layout/fragment_wish_list" />
+
+    <fragment
+        android:id="@+id/nav_my_offers"
+        android:name="com.example.equipo2_crudapp_android.tool_bar_ui.my_offers.MyOffersFragment"
+        android:label="@string/menu_my_offers"
+        tools:layout="@layout/fragment_my_offers" />
+</navigation>
