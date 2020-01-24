@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Equipo2_CRUDapp_Android</string>
+    <string name="app_name">OfertAPPs</string>
 
     <string name="imageViewSoftwareImageDescription"> Image of the software </string>
 
@@ -20,8 +20,6 @@
     <string name="textViewReleaseDateWarning"> *Release date is not valid </string>
     <string name="textViewDescriptionWarning"> *Description is not valid </string>
 
-    <string name="EmptyFieldWarning"> *This field is empty </string>
-
     <string name="buttonCancel"> Cancel </string>
     <string name="buttonAccept"> Accept </string>
 
@@ -30,4 +28,19 @@
         <item> Game </item>
         <item> Extension </item>
     </string-array>
+
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_user">User</string>
+    <string name="menu_add_software">Add Software</string>
+    <string name="menu_shops">Shops</string>
+    <string name="menu_wish_list">WishList</string>
+    <string name="menu_my_offers">My Offers</string>
 </resources>

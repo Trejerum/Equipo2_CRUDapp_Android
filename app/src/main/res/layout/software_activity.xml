@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="141dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="267dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextSoftwareTitle"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Título" />
+
+            <CheckBox
+                android:id="@+id/checkBoxEditSoftware"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewSoftware"
+            android:layout_width="198dp"
+            android:layout_height="139dp"
+            android:layout_weight="1"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextSoftwarePublisher"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Publisher" />
+
+        <EditText
+            android:id="@+id/editTextSoftwareDate"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/textViewSoftwareType"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            android:text="Type:" />
+
+        <Spinner
+            android:id="@+id/spinnerSoftwareType"
+            android:layout_width="165dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextSoftwareDescription"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="Description..." />
+
+    <TextView
+        android:id="@+id/textViewSoftwareExtensions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extensions:" />
+
+    <ListView
+        android:id="@+id/listViewSoftwareExtensions"
+        android:layout_width="match_parent"
+        android:layout_height="117dp" />
+
+    <TextView
+        android:id="@+id/textViewSoftwareOffers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Offers:" />
+
+    <ListView
+        android:id="@+id/listViewSoftwareOffers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
