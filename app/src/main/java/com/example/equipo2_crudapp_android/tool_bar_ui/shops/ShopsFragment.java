@@ -15,6 +15,10 @@ import com.example.equipo2_crudapp_android.ui.adapters.ShopsRecyclerViewAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * Fragment for the shops view
+ * @author Diego Corral
+ */
 public class ShopsFragment extends Fragment {
 
     private ArrayList<String> shopsNames = new ArrayList<>();

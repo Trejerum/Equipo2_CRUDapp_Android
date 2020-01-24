@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.equipo2_crudapp_android.ForgotPasswordActivity;
 import com.example.equipo2_crudapp_android.R;
 
 /**
@@ -20,6 +21,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private TextView textViewLoginWarning;
     private TextView textViewPasswordWarning;
     private TextView buttonSignUp;
+    private TextView textViewForgotPassword;
     private Button buttonSignIn;
     private boolean connection;
 
@@ -44,6 +46,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         textViewPasswordWarning = findViewById(R.id.textViewPasswordWarning);
         editTextPassword = findViewById(R.id.editTextPassword);
 
+        textViewForgotPassword = findViewById(R.id.textViewForgotPassword);
+
         buttonSignIn = (Button)findViewById(R.id.buttonSignIn);
 
         buttonSignUp = findViewById(R.id.buttonSignUp);
@@ -59,6 +63,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         editTextLogin.setOnFocusChangeListener(this);
         editTextPassword.setOnFocusChangeListener(this);
+
+        textViewForgotPassword.setOnClickListener(this);
     }
 
     /**
@@ -131,6 +137,10 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
             finish();
             System.exit(0);
+        } else if (v.getId() == R.id.textViewForgotPassword) {
+            Intent intent = new Intent(SignInActivity.this, ForgotPasswordActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 
@@ -169,9 +179,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         if (editTextPassword.getText().toString().length() >= 3
                 && editTextPassword.getText().toString().length() < 18
                 && editTextPassword.getText().toString().matches("[a-zA-Z0-9\\.\\-\\*]+")) {
-
             textViewPasswordWarning.setVisibility(View.INVISIBLE);
-        } else if (!editTextPassword.getText().equals("")) {
+        }else if (!editTextPassword.getText().equals("")) {
             textViewPasswordWarning.setVisibility(View.VISIBLE);
             checkedSyntax = false;
         }
