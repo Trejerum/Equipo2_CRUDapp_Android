@@ -42,6 +42,7 @@
         android:orientation="horizontal">
 
         <RadioGroup
+            android:id="@+id/radioGroupResults"
             android:layout_width="128dp"
             android:layout_height="wrap_content">
 
@@ -99,7 +100,7 @@
                 android:text="Ascendent" />
 
             <RadioButton
-                android:id="@+id/radioButtonDescendent"
+                android:id="@+id/radioButtonResultsDescendent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descendent" />
@@ -113,6 +114,7 @@
         android:text="Results:" />
 
     <ListView
+        android:id="@+id/listViewResults"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
