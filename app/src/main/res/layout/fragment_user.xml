@@ -122,11 +122,21 @@
         android:id="@+id/buttonChangePassword"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Change Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButtonEdit" />
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Log Out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChangePassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,17 +15,44 @@ import com.example.equipo2_crudapp_android.R;
 import java.util.ArrayList;
 
 /**
- * Adapter for the shops recyclerView
+ * Adapter for the shops recyclerView.
  * @author Diego Corral
  */
 public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder> {
 
+    /**
+     * The name of each offer.
+     */
     private ArrayList<String> offerNames = new ArrayList<>();
+
+    /**
+     * The discounted price of each offer.
+     */
     private ArrayList<String> offerDiscountedPrices = new ArrayList<>();
+
+    /**
+     * The images of each offer.
+     */
     private ArrayList<byte[]> offerImages = new ArrayList<>();
+
+    /**
+     * The shops of each offer.
+     */
     private ArrayList<String> offerShops = new ArrayList<>();
+
+    /**
+     * The context of the view.
+     */
     private Context context;
 
+    /**
+     * Constructor for the adapter.
+     * @param context The context of the view.
+     * @param shopsNames The name of each offer.
+     * @param offerDiscountedPrices The discounted price of each offer.
+     * @param offerImages The images of each offer.
+     * @param offerShops The shops of each offer.
+     */
     public HomeRecyclerViewAdapter(Context context, ArrayList<String> shopsNames,
                                    ArrayList<String> offerDiscountedPrices,
                                    ArrayList<byte[]> offerImages,
@@ -58,6 +85,9 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         return offerNames.size();
     }
 
+    /**
+     * View holder.
+     */
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textViewOfferName;

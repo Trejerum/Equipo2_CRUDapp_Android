@@ -1,4 +1,4 @@
-package com.example.equipo2_crudapp_android;
+package com.example.equipo2_crudapp_android.ui;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

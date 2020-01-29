@@ -1,4 +1,4 @@
-package com.example.equipo2_crudapp_android;
+package com.example.equipo2_crudapp_android.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.equipo2_crudapp_android.R;
+import com.example.equipo2_crudapp_android.ui.DatePickerFragment;
 
 public class AddSoftwareActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 

@@ -16,26 +16,45 @@ import com.example.equipo2_crudapp_android.ui.adapters.ShopsRecyclerViewAdapter;
 
 import java.util.ArrayList;
 
+import equipo2_crudapp_classes.classes.User;
+
 /**
- * Fragment for the home view
+ * Fragment for the home view.
  * @author Diego Corral
  */
 public class HomeFragment extends Fragment {
 
+    /**
+     * The name of each offer.
+     */
     private ArrayList<String> offerNames = new ArrayList<>();
+
+    /**
+     * The name discounted price of each offer.
+     */
     private ArrayList<String> offerDiscountedPrices = new ArrayList<>();
+
+    /**
+     * The image of each offer
+     */
     private ArrayList<byte[]> offerImages = new ArrayList<>();
+
+    /**
+     * The shops of each offer.
+     */
     private ArrayList<String> offerShops = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-
         loadData();
         initRecyclerView(root);
         return root;
     }
 
+    /**
+     * Loads the offers saved in the application.
+     */
     private void loadData() {
         offerNames.add("Ejemplo 1");
         offerDiscountedPrices.add("50");
@@ -78,6 +97,10 @@ public class HomeFragment extends Fragment {
         offerShops.add("Uplay");
     }
 
+    /**
+     * Inits the recycler view with its adapter and loads in it the loaded shops.
+     * @param root The view.
+     */
     private void initRecyclerView(View root){
         RecyclerView recyclerView = root.findViewById(R.id.recyclerViewFeaturedOffers);
         HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(root.getContext(),
