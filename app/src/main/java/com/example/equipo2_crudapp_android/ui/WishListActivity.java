@@ -1,6 +1,7 @@
 package com.example.equipo2_crudapp_android.ui;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -80,6 +81,7 @@ public class WishListActivity extends AppCompatActivity {
             EditText editTextPrice = new EditText(this);
             editTextPrice.setText(wishList.get(i).getMinPrice().toString());
             editTextPrice.setId(300+i);
+            editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             tableEditTexts.add(editTextPrice);
             row.addView(softwareName);
             row.addView(editTextPrice);
