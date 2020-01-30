@@ -32,6 +32,18 @@ s
         <item> Extensión </item>
     </string-array>
 
+    <string name="promptExpirationDate"> Fecha de expiración </string>
+    <string name="promptShop"> Tienda </string>
+    <string name="promptBasePrice"> Precio base </string>
+    <string name="promptDiscount"> Descuento </string>
+    <string name="promptUrl"> https://www.suurl.com </string>
+
+    <string name="textViewExpirationDateWarning"> *Fecha de expiración no válida </string>
+    <string name="textViewShopWarning"> *Tienda no válida </string>
+    <string name="textViewBasePriceWarning"> *Precio base no válido </string>
+    <string name="textViewDiscountWarning"> *Descuento no válido </string>
+    <string name="textViewUrlWarning"> *Url no válida </string>
+
     <string name="navigation_drawer_open">Abrir menú de navegación</string>
     <string name="navigation_drawer_close">Cerrar menú de navegación</string>
     <string name="nav_header_title">LoginEjemplo</string>

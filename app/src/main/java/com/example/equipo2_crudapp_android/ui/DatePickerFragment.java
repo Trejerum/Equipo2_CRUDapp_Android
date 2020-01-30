@@ -9,6 +9,9 @@ import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
 
+/**
+ * DatePicker fragment to show when the user clicks on the editTextReleaseDate.
+ */
 public class DatePickerFragment extends DialogFragment {
 
     private DatePickerDialog.OnDateSetListener listener;

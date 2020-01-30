@@ -32,6 +32,18 @@
         <item> Extension </item>
     </string-array>
 
+    <string name="promptExpirationDate"> Expiration date </string>
+    <string name="promptShop"> Shop </string>
+    <string name="promptBasePrice"> Base price </string>
+    <string name="promptDiscount"> Discount </string>
+    <string name="promptUrl"> https://www.yoururl.com </string>
+
+    <string name="textViewExpirationDateWarning"> *Expiration date is not valid </string>
+    <string name="textViewShopWarning"> *Shop is not valid </string>
+    <string name="textViewBasePriceWarning"> *Base price is not valid </string>
+    <string name="textViewDiscountWarning"> *Discount is not valid </string>
+    <string name="textViewUrlWarning"> *Url is not valid </string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">ExampleLogin</string>

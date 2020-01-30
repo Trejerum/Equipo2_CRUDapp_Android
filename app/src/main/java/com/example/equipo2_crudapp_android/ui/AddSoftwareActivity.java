@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +21,9 @@ import com.example.equipo2_crudapp_android.R;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class to add a new Software to the database through a form.
+ */
 public class AddSoftwareActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
     private EditText editTextSoftwareName;
@@ -38,6 +43,11 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
 
     private boolean checkedFields = false;
 
+    /**
+     * Method to set up the view, assigning events and listeners to its elements.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,11 +70,28 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         buttonAccept = findViewById(R.id.buttonAccept);
 
         editTextReleaseDate.setOnClickListener(this);
+        buttonAccept.setOnClickListener(this);
+        buttonCancel.setOnClickListener(this);
 
         editTextSoftwareName.setOnFocusChangeListener(this);
         editTextParentSoftware.setOnFocusChangeListener(this);
         editTextPublisher.setOnFocusChangeListener(this);
         editTextDescription.setOnFocusChangeListener(this);
+
+        // Makes the textView warning that the field is empty invisible when the user writes
+        // something in the description.
+        editTextDescription.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                textViewDescriptionWarning.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
         R.array.SoftwareTypes, android.R.layout.simple_spinner_item);
@@ -72,6 +99,7 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         spinnerSoftwareType.setAdapter(adapter);
         spinnerSoftwareType.setSelection(1);
 
+        // When the user selects the option EXTENSION, enables the editTextParentSoftware.
         spinnerSoftwareType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -89,6 +117,12 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
+    /**
+     * On click event to fire the functions of the editTextReleaseDate and the buttons cancel and
+     * accept.
+     *
+     * @param view element firing the event.
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -104,6 +138,12 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
+    /**
+     * This method handles the event fired when the button accept is pressed. It launches the method
+     * to check the validity of the fields and then makes sure that there are no empty fields. If
+     * everything is correct, it creates a new software with the data from the fields in the
+     * database.
+     */
     private void handleButtonAccept() {
         checkFields();
 
@@ -131,8 +171,19 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
             textViewReleaseDateWarning.setVisibility(View.VISIBLE);
             checkedFields = false;
         }
+        if (editTextDescription.getText().equals("")) {
+            textViewDescriptionWarning.setVisibility(View.VISIBLE);
+            checkedFields = false;
+        }
+
+        if (checkedFields == true) {
+
+        }
     }
 
+    /**
+     * Method to show a DatePicker when the user clicks on the editTextReleaseDate.
+     */
     private void showDatePickerDialog() {
         DatePickerFragment datePickerFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -145,6 +196,13 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         datePickerFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
+    /**
+     * Method used when the editTexts lose focus. It trims the text from the editTexts so there are
+     * no whitespaces at the beginning or at the end and then launches the method checkFields().
+     *
+     * @param v view triggering the event.
+     * @param hasFocus whether it has been focused or it has lost focus.
+     */
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
 
@@ -161,6 +219,10 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
+    /**
+     * Method to check the validity of the fields. If any of the fields is not correct, it makes the
+     * warning editText visible and sets its text to the warning from strings.xml.
+     */
     private void checkFields() {
 
         checkedFields = true;
