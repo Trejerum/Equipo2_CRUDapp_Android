@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.equipo2_crudapp_android.ForgotPasswordActivity;
@@ -27,6 +30,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     private EditText editTextLogin;
     private EditText editTextPassword;
+    private ImageView imageViewLogo;
 
     private boolean checkedSyntax;
 
@@ -39,7 +43,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
+        imageViewLogo = this.findViewById(R.id.imageViewLogo);
         textViewLoginWarning = findViewById(R.id.textViewLoginWarning);
         editTextLogin = findViewById(R.id.editTextLogin);
 
@@ -87,6 +91,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             syntaxCheck();
 
             if (checkedSyntax){
+                Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotate_animation);
+                imageViewLogo.startAnimation(animation);
+
                 /*User user = new User(editTextLogin.getText().toString(), editTextPassword.getText().toString());
                 clientMessage = new Message();
                 clientMessage.setData(user);
