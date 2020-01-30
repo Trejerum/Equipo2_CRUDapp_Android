@@ -16,6 +16,9 @@ import android.widget.TextView;
 
 import com.example.equipo2_crudapp_android.R;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class AddSoftwareActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
     private EditText editTextSoftwareName;
@@ -72,6 +75,8 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
         spinnerSoftwareType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                textViewSoftwareTypeWarning.setVisibility(View.INVISIBLE);
+
                 if (position == 3) {
                     editTextParentSoftware.setEnabled(true);
                 }
@@ -94,8 +99,37 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
 
                 break;
             case R.id.buttonAccept:
-
+                handleButtonAccept();
                 break;
+        }
+    }
+
+    private void handleButtonAccept() {
+        checkFields();
+
+        if (editTextSoftwareName.getText().equals("")) {
+            textViewSoftwareNameWarning.setVisibility(View.VISIBLE);
+            textViewSoftwareNameWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextPublisher.getText().equals("")) {
+            textViewPublisherWarning.setVisibility(View.VISIBLE);
+            textViewPublisherWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextParentSoftware.getText().equals("")) {
+            textViewParentSoftwareWarning.setVisibility(View.VISIBLE);
+            textViewParentSoftwareWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextReleaseDate.getText().equals("")) {
+            textViewReleaseDateWarning.setVisibility(View.VISIBLE);
+            textViewReleaseDateWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (spinnerSoftwareType.getSelectedItem() == null) {
+            textViewReleaseDateWarning.setVisibility(View.VISIBLE);
+            checkedFields = false;
         }
     }
 
@@ -153,13 +187,24 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
             checkedFields = false;
         }
 
-        // TODO: 19/01/2020
-        // ParentSoftware Match search with the array received from the server
         if (editTextParentSoftware.isEnabled()) {
+            if (editTextParentSoftware.getText().length() >= 3
+                    && editTextParentSoftware.getText().length() < 18
+                    && editTextParentSoftware.getText().toString().matches("[a-zA-Z0-9\\.\\-\\*\\_]+")) {
 
+                textViewParentSoftwareWarning.setVisibility(View.INVISIBLE);
+            } else if (!editTextParentSoftware.getText().equals("")) {
+                textViewParentSoftwareWarning.setVisibility(View.VISIBLE);
+                textViewParentSoftwareWarning.setText(R.string.textViewParentSoftwareWarning);
+                checkedFields = false;
+            }
         }
 
-        // TODO: 19/01/2020
-        // DatePicker field checking code
+        if (LocalDate.parse(editTextReleaseDate.getText(), DateTimeFormatter.ofPattern("yyyy/MM/dd")).isBefore(LocalDate.now().plusDays(1))) {
+            textViewReleaseDateWarning.setVisibility((View.INVISIBLE));
+        } else if (editTextReleaseDate.getText().equals("")) {
+            textViewReleaseDateWarning.setVisibility((View.VISIBLE));
+            textViewReleaseDateWarning.setText(R.string.textViewReleaseDateWarning);
+        }
     }
 }

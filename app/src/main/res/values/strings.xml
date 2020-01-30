@@ -14,11 +14,12 @@
     <string name="choiceParentSoftwareExtension"> Extension </string>
 
     <string name="textViewSoftwareNameWarning"> *Software name is not valid </string>
-    <string name="textViewSoftwareTypeWarning"> *Software type is not valid </string>
     <string name="textViewParentSoftwareWarning"> *Parent software is not valid </string>
     <string name="textViewPublisherWarning"> *Publisher is not valid </string>
     <string name="textViewReleaseDateWarning"> *Release date is not valid </string>
     <string name="textViewDescriptionWarning"> *Description is not valid </string>
+
+    <string name="emptyTextViewWarning"> *Field is empty </string>
 
     <string name="button_cancel">Cancel</string>
     <string name="button_accept">Accept</string>
