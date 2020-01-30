@@ -31,7 +31,7 @@ public class WishListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.wishlist_activity);
+        setContentView(R.layout.fragment_wish_list);
 
         tableLayoutWishList = this.findViewById(R.id.tableLayoutWishList);
         editTextWishListSearch = this.findViewById(R.id.editTextWishListSearch);
