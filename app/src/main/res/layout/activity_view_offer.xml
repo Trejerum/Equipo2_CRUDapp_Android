@@ -96,7 +96,7 @@
         app:layout_constraintStart_toEndOf="@+id/editTextOfferBasePrice" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewOfferBasePriceWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferBasePriceWarning" />
 
     <TextView
         android:id="@+id/textView9"
