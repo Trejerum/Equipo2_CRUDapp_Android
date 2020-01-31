@@ -50,8 +50,8 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
 
         editTextSoftwareName = findViewById(R.id.editTextSoftwareName);
         textViewSoftwareNameWarning = findViewById(R.id.textViewSoftwareNameWarning);
-        editTextShop = findViewById(R.id.editTextShop);
-        textViewShopWarning = findViewById(R.id.textViewShopWarning);
+        editTextShop = findViewById(R.id.editTextOfferShop);
+        textViewShopWarning = findViewById(R.id.textViewOfferShopWarning);
         editTextExpirationDate = findViewById(R.id.editTextExpirationDate);
         textViewExpirationDateWarning = findViewById(R.id.textViewExpirationDateWarning);
         editTextBasePrice = findViewById(R.id.editTextBasePrice);

@@ -50,7 +50,7 @@
             android:text="@string/textViewExpirationDateWarning" />
 
         <EditText
-            android:id="@+id/editTextShop"
+            android:id="@+id/editTextOfferShop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -59,7 +59,7 @@
             android:text="@string/promptShop" />
 
         <TextView
-            android:id="@+id/textViewShopWarning"
+            android:id="@+id/textViewOfferShopWarning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/textViewShopWarning" />

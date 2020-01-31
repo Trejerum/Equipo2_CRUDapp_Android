@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewTitlteWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTitleSoftware" />
 
     <EditText
-        android:id="@+id/editTextPrice"
+        android:id="@+id/editTextOfferPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -36,64 +36,64 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textViewOfferPriceWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/editTextTitleSoftware"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextOfferPrice" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewOfferShop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlteWarning" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextOfferShop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferShop" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textViewOfferShopWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextOfferShop" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewOfferBasePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferShopWarning" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editTextOfferBasePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferBasePrice" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/editText4"
-        app:layout_constraintStart_toEndOf="@+id/editText4" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextOfferBasePrice"
+        app:layout_constraintStart_toEndOf="@+id/editTextOfferBasePrice" />
 
     <TextView
         android:id="@+id/textView8"
@@ -101,28 +101,28 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextOfferBasePrice" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextOfferDiscount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferDiscount" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textViewOfferBasePriceWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextOfferBasePrice" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textViewOfferDiscount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -134,91 +134,99 @@
         android:layout_width="62dp"
         android:layout_height="19dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/editText5"
-        app:layout_constraintStart_toEndOf="@+id/editText5" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextOfferDiscount"
+        app:layout_constraintStart_toEndOf="@+id/editTextOfferDiscount" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewOfferDiscountWarning"
         android:layout_width="66dp"
         android:layout_height="17dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextOfferDiscount" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textViewOfferExpirationDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferDiscountWarning" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editTextOfferExpirationDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferExpirationDate" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textViewOfferExpirationDateWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextOfferExpirationDate" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView3"
+        android:id="@+id/recyclerViewComments"
         android:layout_width="412dp"
         android:layout_height="127dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferUrl" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonReport"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
+
+    <TextView
+        android:id="@+id/textViewOfferUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferExpirationDateWarning" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
