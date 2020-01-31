@@ -147,6 +147,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // startActivity(intent);
                 takePhoto(view);
+                MainActivity.takePhoto();
             }
         }
     }
@@ -315,7 +316,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                         "com.example.android.fileprovider",
                         photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+                 getActivity().startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
     }

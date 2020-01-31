@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tool_bar_ui.user.UserFragment">
+
+    <ImageView
+        android:id="@+id/imageViewUser"
+        android:layout_width="100dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user" />
+
+    <EditText
+        android:id="@+id/editTextLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Login"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.331"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextLogin"
+        app:layout_constraintStart_toStartOf="@+id/editTextLogin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLogin" />
+
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLogin"
+        app:layout_constraintStart_toStartOf="@+id/editTextLogin" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail" />
+
+    <TextView
+        android:id="@+id/textViewLoginNotValid"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="*Login not valid"
+        android:textColor="@color/error"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLogin"
+        app:layout_constraintStart_toEndOf="@+id/textViewLogin" />
+
+    <TextView
+        android:id="@+id/textViewNameNotValid"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="*Name not valid"
+        android:textColor="@color/error"
+        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        app:layout_constraintStart_toEndOf="@+id/textViewName" />
+
+    <TextView
+        android:id="@+id/textViewEmailNotValid"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="*Email Not Valid"
+        android:textColor="@color/error"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintStart_toEndOf="@+id/textViewEmail" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonEdit"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="ToggleButton"
+        android:textOff="Edit"
+        android:textOn="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonChangePassword"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Change Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButtonEdit" />
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Log Out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChangePassword" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
