@@ -127,18 +127,17 @@ public class SoftwareActivity extends AppCompatActivity implements View.OnClickL
         ArrayAdapter<String> arrayOffersAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, offersUrl);
         listViewSoftwareOffers.setAdapter(arrayOffersAdapter);
 
-//        List<String> extensionName = new ArrayList<String>();
-//        for (int i = 0; i < extensions.size(); i++) {
-//            extensionName.add(extensions.get(i).getName());
-//        }
-//        ArrayAdapter<String> arrayExtensionsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, extensionName);
-//        listViewSoftwareOffers.setAdapter(arrayExtensionsAdapter);
+        List<String> extensionName = new ArrayList<String>();
+        for (int i = 0; i < extensions.size(); i++) {
+            extensionName.add(extensions.get(i).getName());
+        }
+        ArrayAdapter<String> arrayExtensionsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, extensionName);
+        listViewSoftwareOffers.setAdapter(arrayExtensionsAdapter);
 
         imageViewSoftware.setImageResource(0);
     }
 
     private void updateData() {
-        //TODO: probar populateData() y updateData()
         Software softwareUpdate = new Software();
         softwareUpdate.setName(editTextSoftwareTitle.getText().toString());
         softwareUpdate.setPublisher(editTextSoftwarePublisher.getText().toString());

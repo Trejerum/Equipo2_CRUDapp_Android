@@ -68,7 +68,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         s2.setSoftwareId(2);
         s1.setName("s1");
         s2.setName("s2");
-
         softwares.add(s1);
         softwares.add(s2);
 
@@ -88,7 +87,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             editTextResultsSearch.setText(query);
-            populateList(softwares);
         }
     }
 
@@ -99,36 +97,35 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
     public void filter () {
         List<Software> filteredSoftware = softwares;
-        if (!checkBoxResultsProgram.isSelected()) {
-            filteredSoftware.removeIf(new Predicate<Software>() {
-                @Override
+        if(!checkBoxResultsProgram.isSelected() && !checkBoxResultsExtension.isSelected() && !checkBoxResultsGame.isSelected()) {
+        }
+        else{
+            if (!checkBoxResultsProgram.isSelected()) {
+                filteredSoftware.removeIf(new Predicate<Software>() {
+                    @Override
                     public boolean test(Software s) {
                         return s.getSoftwareType() == SoftwareType.PROGRAM;
                     }
-            });
-        }
-        if (!checkBoxResultsExtension.isSelected()) {
-            filteredSoftware.removeIf(new Predicate<Software>() {
-                @Override
-                public boolean test(Software s) {
-                    return s.getSoftwareType() == SoftwareType.EXTENSION;
-                }
-            });
-        }
-        if (!checkBoxResultsGame.isSelected()) {
-            filteredSoftware.removeIf(new Predicate<Software>() {
-                @Override
-                public boolean test(Software s) {
-                    return s.getSoftwareType() == SoftwareType.GAME;
-                }
-            });
+                });
+            }
+            if (!checkBoxResultsExtension.isSelected()) {
+                filteredSoftware.removeIf(new Predicate<Software>() {
+                    @Override
+                    public boolean test(Software s) {
+                        return s.getSoftwareType() == SoftwareType.EXTENSION;
+                    }
+                });
+            }
+            if (!checkBoxResultsGame.isSelected()) {
+                filteredSoftware.removeIf(new Predicate<Software>() {
+                    @Override
+                    public boolean test(Software s) {
+                        return s.getSoftwareType() == SoftwareType.GAME;
+                    }
+                });
+            }
         }
 
-        if (radioButtonResultsAscendent.isChecked()) {
-
-        } else {
-
-        }
         switch (radioGroupResults.getCheckedRadioButtonId()) {
             case R.id.radioButtonResultsName:
                 Collections.sort(filteredSoftware, new Comparator<Software>() {
