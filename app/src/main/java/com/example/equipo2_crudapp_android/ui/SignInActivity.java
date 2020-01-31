@@ -274,6 +274,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         buttonSignIn = (Button)findViewById(R.id.buttonSignIn);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         checkBoxRemember = findViewById(R.id.checkBoxRemember);
+        imageViewLogo = findViewById(R.id.imageViewLogo);
 
         textViewLoginWarning.setVisibility(View.INVISIBLE);
         textViewPasswordWarning.setVisibility(View.INVISIBLE);
