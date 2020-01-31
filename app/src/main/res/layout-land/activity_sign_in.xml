@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.SignInActivity">
 
+    <CheckBox
+        android:id="@+id/checkBoxRemember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Remember me"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLayout" />
+
     <ImageView
         android:id="@+id/imageViewLogo"
         android:layout_width="176dp"

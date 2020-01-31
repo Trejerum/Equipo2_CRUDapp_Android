@@ -16,14 +16,26 @@ import com.example.equipo2_crudapp_android.R;
 import java.util.ArrayList;
 
 /**
- * Adapter for the shops recyclerView
+ * Adapter for the shops recyclerView.
  * @author Diego Corral
  */
 public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<ShopsRecyclerViewAdapter.ViewHolder>{
 
+    /**
+     * The name of each shop.
+     */
     private ArrayList<String> shopsNames = new ArrayList<>();
+
+    /**
+     * The context of the view.
+     */
     private Context context;
 
+    /**
+     * Constructor for the adapter.
+     * @param context The context of the view.
+     * @param shopsNames The name of each shop.
+     */
     public ShopsRecyclerViewAdapter(Context context, ArrayList<String> shopsNames) {
         this.shopsNames = shopsNames;
         this.context = context;
@@ -48,6 +60,9 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<ShopsRecycler
         return shopsNames.size();
     }
 
+    /**
+     * view holder.
+     */
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textViewShopName;

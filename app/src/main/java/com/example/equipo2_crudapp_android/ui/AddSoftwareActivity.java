@@ -1,4 +1,4 @@
-package com.example.equipo2_crudapp_android;
+package com.example.equipo2_crudapp_android.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.equipo2_crudapp_android.R;
 
 public class AddSoftwareActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
@@ -36,7 +38,7 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_software);
+        setContentView(R.layout.fragment_add_software);
 
         editTextSoftwareName = findViewById(R.id.editTextSoftwareName);
         textViewSoftwareNameWarning = findViewById(R.id.textViewSoftwareNameWarning);
