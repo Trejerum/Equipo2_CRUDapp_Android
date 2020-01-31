@@ -3,6 +3,7 @@ package com.example.equipo2_crudapp_android.tool_bar_ui.user;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,6 +20,7 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.example.equipo2_crudapp_android.enums.ModificationDialogResponse;
@@ -29,8 +31,13 @@ import com.example.equipo2_crudapp_android.ui.ModificationDialog;
 import com.example.equipo2_crudapp_android.ui.SignInActivity;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import equipo2_crudapp_classes.classes.User;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Fragment for the user view.
@@ -100,7 +107,6 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_user, container, false);
-
         initializeElements(root);
 
         /*UserInterface userInterface = UserAPIClient.getClient();
@@ -138,8 +144,9 @@ public class UserFragment extends Fragment implements View.OnClickListener {
             getActivity().finish();
         } else if(id == imageViewUser.getId()) {
             if(toggleButtonEditIsPressed) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivity(intent);
+                // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                // startActivity(intent);
+                takePhoto(view);
             }
         }
     }
@@ -259,12 +266,75 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         return ret;
     }
 
-    private void takePhoto(View view) {
+    /*private void takePhoto(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
+    }*/
+
+    String currentPhotoPath;
+
+    /**
+     * Create an unique image name
+     * @param view the view
+     * @return image
+     * @throws IOException
+     */
+    private File createImageFile(View view) throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = view.getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
     }
 
 
+    static final int REQUEST_TAKE_PHOTO = 1;
+
+    private void takePhoto(View view) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(view.getContext().getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile(view);
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(view.getContext(),
+                        "com.example.android.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
+        Bundle extras = takePictureIntent.getExtras();
+        Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+        imageViewUser.setImageBitmap(imageBitmap);
+    }
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    /*@Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+            imageViewUser.setImageBitmap(imageBitmap);
+        }
+    }
 
     /**
      * Initializes the elements of the fragment. Finds the views, sets listeners, etc.
