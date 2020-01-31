@@ -12,7 +12,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:orientation="vertical"
-        android:paddingHorizontal="20"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
             android:id="@+id/editTextSoftwareName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/promptSoftwareName" />
@@ -37,10 +37,10 @@
             android:id="@+id/editTextExpirationDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingTop="10"
+            android:paddingTop="10dp"
             android:text="@string/promptExpirationDate" />
 
         <TextView
@@ -53,7 +53,7 @@
             android:id="@+id/editTextShop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/promptShop" />
@@ -67,7 +67,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <EditText
@@ -83,25 +83,24 @@
                 android:id="@+id/editTextDiscount"
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30"
+                android:layout_marginLeft="30dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
                 android:text="@string/promptDiscount" />
 
             <TextView
-                android:id="@+id/textView%"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="%"
+                android:text="@string/percentage"
                 android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0"
             android:orientation="horizontal">
 
             <TextView
@@ -109,7 +108,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingTop="0"
                 android:text="@string/textViewBasePriceWarning" />
 
             <TextView
@@ -117,7 +115,6 @@
                 android:layout_width="47dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingTop="0"
                 android:text="@string/textViewDiscountWarning" />
         </LinearLayout>
 
@@ -125,7 +122,7 @@
             android:id="@+id/editTextUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/promptUrl" />
@@ -139,8 +136,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100"
-            android:layout_marginTop="20"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <Button
@@ -155,7 +152,7 @@
                 android:id="@+id/buttonAccept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30"
+                android:layout_marginLeft="30dp"
                 android:layout_weight="1"
                 android:minWidth="90dip"
                 android:text="@string/button_accept" />

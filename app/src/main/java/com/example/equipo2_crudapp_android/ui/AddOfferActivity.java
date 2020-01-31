@@ -108,6 +108,11 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
 
         if (!hasFocus) {
             editTextSoftwareName.setText(editTextSoftwareName.getText().toString().trim());
+            editTextShop.setText(editTextSoftwareName.getText().toString().trim());
+            editTextExpirationDate.setText(editTextSoftwareName.getText().toString().trim());
+            editTextBasePrice.setText(editTextSoftwareName.getText().toString().trim());
+            editTextDiscount.setText(editTextSoftwareName.getText().toString().trim());
+            editTextUrl.setText(editTextSoftwareName.getText().toString().trim());
 
             checkFields();
         }
@@ -125,6 +130,31 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
         if (editTextSoftwareName.getText().equals("")) {
             textViewSoftwareNameWarning.setVisibility(View.VISIBLE);
             textViewSoftwareNameWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextShop.getText().equals("")) {
+            textViewShopWarning.setVisibility(View.VISIBLE);
+            textViewShopWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextExpirationDate.getText().equals("")) {
+            textViewExpirationDateWarning.setVisibility(View.VISIBLE);
+            textViewExpirationDateWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextBasePrice.getText().equals("")) {
+            textViewBasePriceWarning.setVisibility(View.VISIBLE);
+            textViewBasePriceWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextDiscount.getText().equals("")) {
+            textViewDiscountWarning.setVisibility(View.VISIBLE);
+            textViewDiscountWarning.setText(R.string.emptyTextViewWarning);
+            checkedFields = false;
+        }
+        if (editTextUrl.getText().equals("")) {
+            textViewUrlWarning.setVisibility(View.VISIBLE);
+            textViewUrlWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
 
@@ -166,8 +196,47 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
             textViewSoftwareNameWarning.setText(R.string.textViewSoftwareNameWarning);
             checkedFields = false;
         }
+        if (editTextShop.getText().length() >= 3
+                && editTextShop.getText().length() < 18
+                && editTextShop.getText().toString().matches("[a-zA-Z0-9\\.\\-\\*\\_]+")) {
 
-        if (LocalDate.parse(editTextExpirationDate.getText(), DateTimeFormatter.ofPattern("yyyy/MM/dd")).isBefore(LocalDate.now().plusDays(1))) {
+            textViewShopWarning.setVisibility(View.INVISIBLE);
+        } else if (!editTextShop.getText().equals("")) {
+            textViewShopWarning.setVisibility(View.VISIBLE);
+            textViewShopWarning.setText(R.string.textViewShopWarning);
+            checkedFields = false;
+        }
+        if (editTextBasePrice.getText().length() >= 3
+                && editTextBasePrice.getText().length() < 18
+                && editTextBasePrice.getText().toString().matches("^[0-9]{1,3}([,.][0-9]{1,2})?$")) {
+
+            textViewBasePriceWarning.setVisibility(View.INVISIBLE);
+        } else if (!editTextBasePrice.getText().equals("")) {
+            textViewBasePriceWarning.setVisibility(View.VISIBLE);
+            textViewBasePriceWarning.setText(R.string.textViewBasePriceWarning);
+            checkedFields = false;
+        }
+        if (editTextDiscount.getText().length() >= 3
+                && editTextDiscount.getText().length() < 18
+                && editTextDiscount.getText().toString().matches("\\d{1,2}")) {
+
+            textViewDiscountWarning.setVisibility(View.INVISIBLE);
+        } else if (!editTextDiscount.getText().equals("")) {
+            textViewDiscountWarning.setVisibility(View.VISIBLE);
+            textViewDiscountWarning.setText(R.string.textViewDiscountWarning);
+            checkedFields = false;
+        }
+        if (editTextUrl.getText().length() >= 3
+                && editTextUrl.getText().length() < 18
+                && editTextUrl.getText().toString().matches("[a-zA-Z0-9\\.\\*\\_\\/\\=\\?\\-\\(\\)\\'\\|\\@\\#\\$\\&]+")) {
+
+            textViewUrlWarning.setVisibility(View.INVISIBLE);
+        } else if (!editTextUrl.getText().equals("")) {
+            textViewUrlWarning.setVisibility(View.VISIBLE);
+            textViewUrlWarning.setText(R.string.textViewUrlWarning);
+            checkedFields = false;
+        }
+        if (LocalDate.parse(editTextExpirationDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")).isBefore(LocalDate.now().plusDays(1))) {
             textViewExpirationDateWarning.setVisibility((View.INVISIBLE));
         } else if (editTextExpirationDate.getText().equals("")) {
             textViewExpirationDateWarning.setVisibility((View.VISIBLE));

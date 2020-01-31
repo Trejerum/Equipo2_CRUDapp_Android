@@ -37,6 +37,7 @@ s
     <string name="promptBasePrice"> Precio base </string>
     <string name="promptDiscount"> Descuento </string>
     <string name="promptUrl"> https://www.suurl.com </string>
+    <string name="percentage"> % </string>
 
     <string name="textViewExpirationDateWarning"> *Fecha de expiración no válida </string>
     <string name="textViewShopWarning"> *Tienda no válida </string>

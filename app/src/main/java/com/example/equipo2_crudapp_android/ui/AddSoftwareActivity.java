@@ -262,7 +262,7 @@ public class AddSoftwareActivity extends AppCompatActivity implements View.OnCli
             }
         }
 
-        if (LocalDate.parse(editTextReleaseDate.getText(), DateTimeFormatter.ofPattern("yyyy/MM/dd")).isBefore(LocalDate.now().plusDays(1))) {
+        if (LocalDate.parse(editTextReleaseDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")).isBefore(LocalDate.now().plusDays(1))) {
             textViewReleaseDateWarning.setVisibility((View.INVISIBLE));
         } else if (editTextReleaseDate.getText().equals("")) {
             textViewReleaseDateWarning.setVisibility((View.VISIBLE));
