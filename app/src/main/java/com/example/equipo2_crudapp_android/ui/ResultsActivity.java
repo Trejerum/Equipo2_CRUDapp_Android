@@ -1,5 +1,7 @@
 package com.example.equipo2_crudapp_android.ui;
 
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,7 +59,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         listViewResults = this.findViewById(R.id.listViewResults);
         radioGroupResults = this.findViewById(R.id.radioGroupResults);
         softwares = new ArrayList<Software>();
-
         buttonResultsSearch.setOnClickListener(this);
 
         //TODO: recibir lista software
@@ -71,9 +72,26 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         softwares.add(s1);
         softwares.add(s2);
 
+        handleIntent(getIntent());
         populateList(softwares);
 
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            editTextResultsSearch.setText(query);
+            populateList(softwares);
+        }
+    }
+
     private void populateList(List<Software> data) {
         ResultsListAdapter listAdapter = new ResultsListAdapter(this, data);
         listViewResults.setAdapter(listAdapter);
