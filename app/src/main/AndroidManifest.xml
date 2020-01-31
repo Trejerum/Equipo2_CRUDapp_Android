@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_ofertapps_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.AddOfferActivity"></activity>
+        <activity android:name=".ui.ViewOfferActivity"></activity>
+        <activity android:name=".ui.AddOfferActivity" />
         <activity android:name=".ui.ForgotPasswordActivity" />
         <activity android:name=".ui.ChangePasswordActivity" />
         <activity
@@ -41,10 +42,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths">
-            </meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>
