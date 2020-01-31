@@ -75,7 +75,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.textViewOfferName.setText(offerNames.get(position));
-        holder.textViewDiscountedPrice.setText(offerDiscountedPrices.get(position) + "€");
+        // holder.textViewDiscountedPrice.setText(offerDiscountedPrices.get(position) + "€");
         holder.textViewOfferShop.setText(offerShops.get(position));
         // holder.imageViewOffer
     }
