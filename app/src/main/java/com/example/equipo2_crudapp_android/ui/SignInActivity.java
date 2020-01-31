@@ -9,9 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.equipo2_crudapp_android.R;
@@ -68,6 +71,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
      * EditText for the user to introduce his password.
      */
     private EditText editTextPassword;
+    private ImageView imageViewLogo;
 
     /**
      * Validates the syntax of the data introduced. If valid true, otherwise false.
@@ -111,6 +115,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             syntaxCheck();
 
             if (checkedSyntax){
+                Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotate_animation);
+                imageViewLogo.startAnimation(animation);
                 User user = new User();
                 user.setLogin(editTextLogin.getText().toString());
                 user.setPassword(editTextPassword.getText().toString());
@@ -268,6 +274,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         buttonSignIn = (Button)findViewById(R.id.buttonSignIn);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         checkBoxRemember = findViewById(R.id.checkBoxRemember);
+        imageViewLogo = findViewById(R.id.imageViewLogo);
 
         textViewLoginWarning.setVisibility(View.INVISIBLE);
         textViewPasswordWarning.setVisibility(View.INVISIBLE);
