@@ -15,9 +15,13 @@ import com.example.equipo2_crudapp_android.R;
 import com.example.equipo2_crudapp_android.ui.adapters.ResultsListAdapter;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 import equipo2_crudapp_classes.classes.Software;
+import equipo2_crudapp_classes.enumerators.SoftwareType;
 
 public class ResultsActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText editTextResultsSearch;
@@ -67,45 +71,94 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         softwares.add(s1);
         softwares.add(s2);
 
-        ResultsListAdapter listAdapter = new ResultsListAdapter(this, softwares);
+        populateList(softwares);
+
+    }
+    private void populateList(List<Software> data) {
+        ResultsListAdapter listAdapter = new ResultsListAdapter(this, data);
         listViewResults.setAdapter(listAdapter);
     }
 
     public void filter () {
-        //TODO completar funcion
+        List<Software> filteredSoftware = softwares;
+        if (!checkBoxResultsProgram.isSelected()) {
+            filteredSoftware.removeIf(new Predicate<Software>() {
+                @Override
+                    public boolean test(Software s) {
+                        return s.getSoftwareType() == SoftwareType.PROGRAM;
+                    }
+            });
+        }
+        if (!checkBoxResultsExtension.isSelected()) {
+            filteredSoftware.removeIf(new Predicate<Software>() {
+                @Override
+                public boolean test(Software s) {
+                    return s.getSoftwareType() == SoftwareType.EXTENSION;
+                }
+            });
+        }
+        if (!checkBoxResultsGame.isSelected()) {
+            filteredSoftware.removeIf(new Predicate<Software>() {
+                @Override
+                public boolean test(Software s) {
+                    return s.getSoftwareType() == SoftwareType.GAME;
+                }
+            });
+        }
+
+        if (radioButtonResultsAscendent.isChecked()) {
+
+        } else {
+
+        }
         switch (radioGroupResults.getCheckedRadioButtonId()) {
             case R.id.radioButtonResultsName:
+                Collections.sort(filteredSoftware, new Comparator<Software>() {
+                    @Override public int compare(Software s1, Software s2) {
+                        return s1.getName().compareTo(s2.getName());
+                    }
+
+                });
+                if(radioButtonResultsDescendent.isSelected()) {
+                    Collections.reverse(filteredSoftware);
+                }
                 break;
 
             case R.id.radioButtonResultsPublisher:
+                Collections.sort(filteredSoftware, new Comparator<Software>() {
+                    @Override public int compare(Software s1, Software s2) {
+                        return s1.getPublisher().compareTo(s2.getPublisher());
+                    }
+
+                });
+                if(radioButtonResultsDescendent.isSelected()) {
+                    Collections.reverse(filteredSoftware);
+                }
                 break;
 
             case R.id.radioButtonResultsDate:
+                Collections.sort(filteredSoftware, new Comparator<Software>() {
+                    @Override public int compare(Software s1, Software s2) {
+                        return s1.getReleaseDate().compareTo(s2.getReleaseDate());
+                    }
+
+                });
+                if(radioButtonResultsDescendent.isSelected()) {
+                    Collections.reverse(filteredSoftware);
+                }
                 break;
-        }
 
-        if(checkBoxResultsProgram.isChecked()) {
 
         }
-        if(checkBoxResultsExtension.isChecked()) {
+        populateList(filteredSoftware);
 
-        }
-        if(checkBoxResultsGame.isChecked()) {
-
-        }
-
-        if(radioButtonResultsAscendent.isChecked()) {
-
-        }
-        else {
-
-        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonResultsSearch:
+                filter();
                 break;
         }
     }
