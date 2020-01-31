@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTitlteWarning"
+        android:id="@+id/textViewTitleWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitlteWarning" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleWarning" />
 
     <EditText
         android:id="@+id/editTextOfferShop"
@@ -96,7 +96,7 @@
         app:layout_constraintStart_toEndOf="@+id/editTextOfferBasePrice" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewOfferBasePriceWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -114,20 +114,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewOfferDiscount" />
 
     <TextView
-        android:id="@+id/textViewOfferBasePriceWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextOfferBasePrice" />
-
-    <TextView
         android:id="@+id/textViewOfferDiscount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOfferBasePriceWarning" />
 
     <TextView
         android:id="@+id/textView9"
