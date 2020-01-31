@@ -1,6 +1,7 @@
 package com.example.equipo2_crudapp_android.ui;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,18 +17,19 @@ import com.example.equipo2_crudapp_android.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import equipo2_crudapp_classes.classes.Software;
 import equipo2_crudapp_classes.classes.Wish;
 
-public class WishListActivity extends AppCompatActivity {
+public class WishListActivity extends AppCompatActivity implements  View.OnClickListener {
     private TableLayout tableLayoutWishList;
     private EditText editTextWishListSearch;
     private Button buttonWishListSearch;
     private CheckBox checkBoxWishListEdit;
     private List<EditText> tableEditTexts;
-
     private List<Wish> wishList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +41,10 @@ public class WishListActivity extends AppCompatActivity {
         checkBoxWishListEdit = this.findViewById(R.id.checkBoxWishListEdit);
 
         tableEditTexts = new ArrayList<EditText>();
+        buttonWishListSearch.setOnClickListener(this);
         checkBoxWishListEdit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 View view = getWindow().getDecorView().getRootView();
                 toggleEdit();
             }
@@ -64,22 +67,22 @@ public class WishListActivity extends AppCompatActivity {
         wishList.add(w1);
         wishList.add(w2);
 
-        populateTable();
+        populateTable(wishList);
         toggleEdit();
-
     }
 
 
-    private void populateTable() {
-        for(int i = 0; i < wishList.size(); i++) {
+    private void populateTable(List<Wish> data) {
+        for (int i = 0; i < data.size(); i++) {
             TableRow row = new TableRow(this);
-            row.setId(100+i);
+            row.setId(100 + i);
             TextView softwareName = new TextView(this);
-            softwareName.setId(200+i);
-            softwareName.setText(wishList.get(i).getSoftware().getName());
+            softwareName.setId(200 + i);
+            softwareName.setText(data.get(i).getSoftware().getName());
             EditText editTextPrice = new EditText(this);
-            editTextPrice.setText(wishList.get(i).getMinPrice().toString());
-            editTextPrice.setId(300+i);
+            editTextPrice.setText(data.get(i).getMinPrice().toString());
+            editTextPrice.setId(300 + i);
+            editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             tableEditTexts.add(editTextPrice);
             row.addView(softwareName);
             row.addView(editTextPrice);
@@ -88,28 +91,55 @@ public class WishListActivity extends AppCompatActivity {
         }
     }
 
-    private void toggleEdit () {
-        if(checkBoxWishListEdit.isChecked()) {
+    private void toggleEdit() {
+        if (checkBoxWishListEdit.isChecked()) {
             checkBoxWishListEdit.setText("Save");
-            for(int i = 0; i < tableEditTexts.size(); i++) {
+            for (int i = 0; i < tableEditTexts.size(); i++) {
                 setReadOnly(tableEditTexts.get(i), false);
             }
-        }
-        else {
+        } else {
             checkBoxWishListEdit.setText("Edit");
-            for(int i = 0; i < tableEditTexts.size(); i++) {
+            List<Wish> auxWishes = wishList;
+            for (int i = 0; i < tableEditTexts.size(); i++) {
                 setReadOnly(tableEditTexts.get(i), true);
                 //Update prices
-                wishList.get(i).setMinPrice(Double.parseDouble(tableEditTexts.get(i).getText().toString()));
+                auxWishes.get(i).setMinPrice(Double.parseDouble(tableEditTexts.get(i).getText().toString()));
+            }
+            if (!auxWishes.equals(wishList)) {
+                //TODO: update the changes on wishes
             }
         }
     }
 
-    private  void setReadOnly(EditText editText, boolean readOnly) {
+    private void setReadOnly(EditText editText, boolean readOnly) {
         editText.setFocusable(!readOnly);
         editText.setFocusableInTouchMode(!readOnly);
         editText.setClickable(!readOnly);
         editText.setLongClickable(!readOnly);
         editText.setCursorVisible(!readOnly);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonWishListSearch:
+                if (editTextWishListSearch.getText().toString() != null || editTextWishListSearch.getText().toString() != "") {
+                    List<Wish> filteredWishes = new ArrayList<>();
+                    filteredWishes.addAll(wishList);
+                    //Filter results
+                    filteredWishes.removeIf(new Predicate<Wish>() {
+                        @Override
+                        public boolean test(Wish w) {
+                            return !w.getSoftware().getName().toLowerCase().contains(editTextWishListSearch.getText().toString().toLowerCase());
+                        }
+                    });
+                    tableLayoutWishList.removeViews(1, tableLayoutWishList.getChildCount() -1);
+                    populateTable(filteredWishes);
+                    break;
+                }
+                else {
+                    populateTable(wishList);
+                }
+        }
     }
 }
