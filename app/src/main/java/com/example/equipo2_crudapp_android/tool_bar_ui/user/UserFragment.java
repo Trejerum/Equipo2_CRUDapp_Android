@@ -318,15 +318,11 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
-        Bundle extras = takePictureIntent.getExtras();
-        Bitmap imageBitmap = (Bitmap) extras.get("data");
-
-        imageViewUser.setImageBitmap(imageBitmap);
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    /*@Override
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
