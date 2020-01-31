@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/values-b+es'] } }
 }
 
 dependencies {
@@ -36,4 +37,3 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-simplexml:2.6.1'
     implementation files('libs/Equipo2_CRUDapp_Classes.jar')
 }
-

@@ -14,11 +14,12 @@
     <string name="choiceParentSoftwareExtension"> Extension </string>
 
     <string name="textViewSoftwareNameWarning"> *Software name is not valid </string>
-    <string name="textViewSoftwareTypeWarning"> *Software type is not valid </string>
     <string name="textViewParentSoftwareWarning"> *Parent software is not valid </string>
     <string name="textViewPublisherWarning"> *Publisher is not valid </string>
     <string name="textViewReleaseDateWarning"> *Release date is not valid </string>
     <string name="textViewDescriptionWarning"> *Description is not valid </string>
+
+    <string name="emptyTextViewWarning"> *Field is empty </string>
 
     <string name="button_cancel">Cancel</string>
     <string name="button_accept">Accept</string>
@@ -30,6 +31,19 @@
         <item> Game </item>
         <item> Extension </item>
     </string-array>
+
+    <string name="promptExpirationDate"> Expiration date </string>
+    <string name="promptShop"> Shop </string>
+    <string name="promptBasePrice"> Base price </string>
+    <string name="promptDiscount"> Discount </string>
+    <string name="promptUrl"> https://www.yoururl.com </string>
+    <string name="percentage"> % </string>
+
+    <string name="textViewExpirationDateWarning"> *Expiration date is not valid </string>
+    <string name="textViewShopWarning"> *Shop is not valid </string>
+    <string name="textViewBasePriceWarning"> *Base price is not valid </string>
+    <string name="textViewDiscountWarning"> *Discount is not valid </string>
+    <string name="textViewUrlWarning"> *Url is not valid </string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

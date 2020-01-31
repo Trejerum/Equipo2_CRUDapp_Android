@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">OfertAPPs</string>
+s
+    <string name="imageViewSoftwareImageDescription"> Imagen del Software </string>
+
+    <string name="promptSoftwareName"> Nombre del software </string>
+    <string name="promptParentSoftware"> Software padre </string>
+    <string name="promptPublisher"> Publicador </string>
+    <string name="promptReleaseDate"> Fecha de lanzamiento </string>
+    <string name="promptDescription"> Breve descripción del software </string>
+
+    <string name="choiceParentSoftwareProgram"> Programa </string>
+    <string name="choiceParentSoftwareGame"> Juego </string>
+    <string name="choiceParentSoftwareExtension"> Extensión </string>
+
+    <string name="textViewSoftwareNameWarning"> *Nombre del software no es válido </string>
+    <string name="textViewParentSoftwareWarning"> *Software padre no válido </string>
+    <string name="textViewPublisherWarning"> *Publicador no válido </string>
+    <string name="textViewReleaseDateWarning"> *Fecha de lanzamiento no válida </string>
+    <string name="textViewDescriptionWarning"> *Descripción no válida </string>
+
+    <string name="emptyTextViewWarning"> *Este campo está vacío </string>
+
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_accept">Aceptar</string>
+    <string name="button_yes">Si</string>
+    <string name="button_no">No</string>
+
+    <string-array name="SoftwareTypes">
+        <item> Programa </item>
+        <item> Juego </item>
+        <item> Extensión </item>
+    </string-array>
+
+    <string name="promptExpirationDate"> Fecha de expiración </string>
+    <string name="promptShop"> Tienda </string>
+    <string name="promptBasePrice"> Precio base </string>
+    <string name="promptDiscount"> Descuento </string>
+    <string name="promptUrl"> https://www.suurl.com </string>
+    <string name="percentage"> % </string>
+
+    <string name="textViewExpirationDateWarning"> *Fecha de expiración no válida </string>
+    <string name="textViewShopWarning"> *Tienda no válida </string>
+    <string name="textViewBasePriceWarning"> *Precio base no válido </string>
+    <string name="textViewDiscountWarning"> *Descuento no válido </string>
+    <string name="textViewUrlWarning"> *Url no válida </string>
+
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="nav_header_title">LoginEjemplo</string>
+    <string name="nav_header_subtitle">ejemplo@ejemplo.com</string>
+    <string name="nav_header_desc">Cabecera de navegador</string>
+    <string name="action_settings">Configuración</string>
+
+    <string name="menu_home">Menú rincipal</string>
+    <string name="menu_user">Usuario</string>
+    <string name="menu_add_software">Crear software</string>
+    <string name="menu_shops">Tiendas</string>
+    <string name="menu_wish_list">Lista de deseos</string>
+    <string name="menu_my_offers">Mis ofertas</string>
+
+    <string name="modification_confirm">¿Quiere guardar los cambios?</string>
+
+</resources>

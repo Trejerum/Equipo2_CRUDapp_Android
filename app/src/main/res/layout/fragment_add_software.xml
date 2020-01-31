@@ -41,7 +41,7 @@
         android:id="@+id/textViewSoftwareTypeWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textViewSoftwareTypeWarning"
+        android:text="@string/emptyTextViewWarning"
         app:layout_constraintBottom_toTopOf="@+id/spinnerSoftwareType"
         tools:layout_editor_absoluteX="56dp" />
 
