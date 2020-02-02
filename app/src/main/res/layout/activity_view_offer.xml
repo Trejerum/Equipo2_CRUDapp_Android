@@ -166,7 +166,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewComments"
         android:layout_width="412dp"
-        android:layout_height="127dp"
+        android:layout_height="114dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewOfferUrl" />
@@ -179,7 +179,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+        app:layout_constraintEnd_toStartOf="@+id/toggleButtonEditOffer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
 
@@ -203,13 +203,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
 
-    <Button
-        android:id="@+id/buttonEdit"
+    <ToggleButton
+        android:id="@+id/toggleButtonEditOffer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:text="ToggleButton"
+        android:textOff="Edit"
+        android:textOn="Edit"
         app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewComments" />
 
