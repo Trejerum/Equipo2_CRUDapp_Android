@@ -3,6 +3,7 @@ package com.example.equipo2_crudapp_android.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -88,7 +89,9 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
                 showDatePickerDialog();
                 break;
             case R.id.buttonCancel:
-
+                Intent intent = new Intent(AddOfferActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.buttonAccept:
                 handleButtonAccept();
