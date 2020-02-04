@@ -95,6 +95,7 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.buttonAccept:
                 handleButtonAccept();
+
                 break;
         }
     }
