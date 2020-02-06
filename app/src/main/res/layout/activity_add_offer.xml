@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/promptSoftwareName" />
+            android:hint="@string/promptSoftwareName"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textViewSoftwareNameWarning"
@@ -37,11 +37,14 @@
             android:id="@+id/editTextExpirationDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:maxLines="1"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingTop="10dp"
-            android:text="@string/promptExpirationDate" />
+            android:hint="@string/promptExpirationDate"
+            android:paddingTop="10dp" />
 
         <TextView
             android:id="@+id/textViewExpirationDateWarning"
@@ -55,8 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/promptShop" />
+            android:hint="@string/promptShop"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textViewOfferShopWarning"
@@ -76,8 +79,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:text="@string/promptBasePrice" />
+                android:hint="@string/promptBasePrice"
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/editTextDiscount"
@@ -86,8 +89,8 @@
                 android:layout_marginLeft="30dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number"
-                android:text="@string/promptDiscount" />
+                android:hint="@string/promptDiscount"
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/textView"
@@ -124,8 +127,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/promptUrl" />
+            android:hint="@string/promptUrl"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textViewUrlWarning"

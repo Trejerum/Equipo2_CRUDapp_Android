@@ -13,9 +13,6 @@ import android.widget.TextView;
 
 import com.example.equipo2_crudapp_android.R;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 /**
  * Class to add a new offer to the database.
  */
@@ -34,15 +31,12 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
     private EditText editTextUrl;
     private TextView textViewUrlWarning;
 
-    private Button buttonAccept;
-    private Button buttonCancel;
-
     private boolean checkedFields = false;
 
     /**
      * Method to set up the view, assigning events and listeners to its elements.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +47,7 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
         textViewSoftwareNameWarning = findViewById(R.id.textViewSoftwareNameWarning);
         editTextShop = findViewById(R.id.editTextOfferShop);
         textViewShopWarning = findViewById(R.id.textViewOfferShopWarning);
-        editTextExpirationDate = findViewById(R.id.editTextExpirationDate);
+        editTextExpirationDate = findViewById(R.id.editTextOfferExpirationDate);
         textViewExpirationDateWarning = findViewById(R.id.textViewExpirationDateWarning);
         editTextBasePrice = findViewById(R.id.editTextBasePrice);
         textViewBasePriceWarning = findViewById(R.id.textViewBasePriceWarning);
@@ -61,19 +55,26 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
         textViewDiscountWarning = findViewById(R.id.textViewDiscountWarning);
         editTextUrl = findViewById(R.id.editTextUrl);
         textViewUrlWarning = findViewById(R.id.textViewUrlWarning);
-        buttonAccept = findViewById(R.id.buttonAccept);
-        buttonCancel = findViewById(R.id.buttonCancel);
+
+        textViewSoftwareNameWarning.setVisibility(View.INVISIBLE);
+        textViewShopWarning.setVisibility(View.INVISIBLE);
+        textViewExpirationDateWarning.setVisibility(View.INVISIBLE);
+        textViewBasePriceWarning.setVisibility(View.INVISIBLE);
+        textViewDiscountWarning.setVisibility(View.INVISIBLE);
+        textViewUrlWarning.setVisibility(View.INVISIBLE);
+
+        Button buttonAccept = findViewById(R.id.buttonAccept);
+        Button buttonCancel = findViewById(R.id.buttonCancel);
+        buttonAccept.setOnClickListener(this);
+        buttonCancel.setOnClickListener(this);
 
         editTextSoftwareName.setOnFocusChangeListener(this);
         editTextShop.setOnFocusChangeListener(this);
-        editTextExpirationDate.setOnFocusChangeListener(this);
         editTextBasePrice.setOnFocusChangeListener(this);
         editTextDiscount.setOnFocusChangeListener(this);
         editTextUrl.setOnFocusChangeListener(this);
 
         editTextExpirationDate.setOnClickListener(this);
-        buttonAccept.setOnClickListener(this);
-        buttonCancel.setOnClickListener(this);
     }
 
     /**
@@ -86,6 +87,7 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.editTextReleaseDate:
+                editTextSoftwareName.setText("Repollo");
                 showDatePickerDialog();
                 break;
             case R.id.buttonCancel:
@@ -95,7 +97,6 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.buttonAccept:
                 handleButtonAccept();
-
                 break;
         }
     }
@@ -112,11 +113,10 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
 
         if (!hasFocus) {
             editTextSoftwareName.setText(editTextSoftwareName.getText().toString().trim());
-            editTextShop.setText(editTextSoftwareName.getText().toString().trim());
-            editTextExpirationDate.setText(editTextSoftwareName.getText().toString().trim());
-            editTextBasePrice.setText(editTextSoftwareName.getText().toString().trim());
-            editTextDiscount.setText(editTextSoftwareName.getText().toString().trim());
-            editTextUrl.setText(editTextSoftwareName.getText().toString().trim());
+            editTextShop.setText(editTextShop.getText().toString().trim());
+            editTextBasePrice.setText(editTextBasePrice.getText().toString().trim());
+            editTextDiscount.setText(editTextDiscount.getText().toString().trim());
+            editTextUrl.setText(editTextUrl.getText().toString().trim());
 
             checkFields();
         }
@@ -131,38 +131,38 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
     private void handleButtonAccept() {
         checkFields();
 
-        if (editTextSoftwareName.getText().equals("")) {
+        if (editTextSoftwareName.getText().toString().equals("")) {
             textViewSoftwareNameWarning.setVisibility(View.VISIBLE);
             textViewSoftwareNameWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
-        if (editTextShop.getText().equals("")) {
+        if (editTextShop.getText().toString().equals("")) {
             textViewShopWarning.setVisibility(View.VISIBLE);
             textViewShopWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
-        if (editTextExpirationDate.getText().equals("")) {
+        if (editTextExpirationDate.getText().toString().equals("")) {
             textViewExpirationDateWarning.setVisibility(View.VISIBLE);
             textViewExpirationDateWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
-        if (editTextBasePrice.getText().equals("")) {
+        if (editTextBasePrice.getText().toString().equals("")) {
             textViewBasePriceWarning.setVisibility(View.VISIBLE);
             textViewBasePriceWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
-        if (editTextDiscount.getText().equals("")) {
+        if (editTextDiscount.getText().toString().equals("")) {
             textViewDiscountWarning.setVisibility(View.VISIBLE);
             textViewDiscountWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
-        if (editTextUrl.getText().equals("")) {
+        if (editTextUrl.getText().toString().equals("")) {
             textViewUrlWarning.setVisibility(View.VISIBLE);
             textViewUrlWarning.setText(R.string.emptyTextViewWarning);
             checkedFields = false;
         }
 
-        if (checkedFields == true) {
+        if (checkedFields) {
 
         }
     }
@@ -180,6 +180,7 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
         });
 
         datePickerFragment.show(getSupportFragmentManager(), "datePicker");
+        editTextUrl.setText("Patata");
     }
 
     /**
@@ -192,20 +193,20 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
 
         if (editTextSoftwareName.getText().length() >= 3
                 && editTextSoftwareName.getText().length() < 18
-                && editTextSoftwareName.getText().toString().matches("[a-zA-Z0-9\\.\\-\\*\\_]+")) {
+                && editTextSoftwareName.getText().toString().matches("[a-zA-Z0-9.\\-*_]+")) {
 
             textViewSoftwareNameWarning.setVisibility(View.INVISIBLE);
-        } else if (!editTextSoftwareName.getText().equals("")) {
+        } else if (!editTextSoftwareName.getText().toString().equals("")) {
             textViewSoftwareNameWarning.setVisibility(View.VISIBLE);
             textViewSoftwareNameWarning.setText(R.string.textViewSoftwareNameWarning);
             checkedFields = false;
         }
         if (editTextShop.getText().length() >= 3
                 && editTextShop.getText().length() < 18
-                && editTextShop.getText().toString().matches("[a-zA-Z0-9\\.\\-\\*\\_]+")) {
+                && editTextShop.getText().toString().matches("[a-zA-Z0-9.\\-*_]+")) {
 
             textViewShopWarning.setVisibility(View.INVISIBLE);
-        } else if (!editTextShop.getText().equals("")) {
+        } else if (!editTextShop.getText().toString().equals("")) {
             textViewShopWarning.setVisibility(View.VISIBLE);
             textViewShopWarning.setText(R.string.textViewShopWarning);
             checkedFields = false;
@@ -215,7 +216,7 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
                 && editTextBasePrice.getText().toString().matches("^[0-9]{1,3}([,.][0-9]{1,2})?$")) {
 
             textViewBasePriceWarning.setVisibility(View.INVISIBLE);
-        } else if (!editTextBasePrice.getText().equals("")) {
+        } else if (!editTextBasePrice.getText().toString().equals("")) {
             textViewBasePriceWarning.setVisibility(View.VISIBLE);
             textViewBasePriceWarning.setText(R.string.textViewBasePriceWarning);
             checkedFields = false;
@@ -225,26 +226,20 @@ public class AddOfferActivity extends AppCompatActivity implements View.OnClickL
                 && editTextDiscount.getText().toString().matches("\\d{1,2}")) {
 
             textViewDiscountWarning.setVisibility(View.INVISIBLE);
-        } else if (!editTextDiscount.getText().equals("")) {
+        } else if (!editTextDiscount.getText().toString().equals("")) {
             textViewDiscountWarning.setVisibility(View.VISIBLE);
             textViewDiscountWarning.setText(R.string.textViewDiscountWarning);
             checkedFields = false;
         }
         if (editTextUrl.getText().length() >= 3
                 && editTextUrl.getText().length() < 18
-                && editTextUrl.getText().toString().matches("[a-zA-Z0-9\\.\\*\\_\\/\\=\\?\\-\\(\\)\\'\\|\\@\\#\\$\\&]+")) {
+                && editTextUrl.getText().toString().matches("[a-zA-Z0-9.*_/=?\\-()'|@#$&]+")) {
 
             textViewUrlWarning.setVisibility(View.INVISIBLE);
-        } else if (!editTextUrl.getText().equals("")) {
+        } else if (!editTextUrl.getText().toString().equals("")) {
             textViewUrlWarning.setVisibility(View.VISIBLE);
             textViewUrlWarning.setText(R.string.textViewUrlWarning);
             checkedFields = false;
-        }
-        if (LocalDate.parse(editTextExpirationDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")).isBefore(LocalDate.now().plusDays(1))) {
-            textViewExpirationDateWarning.setVisibility((View.INVISIBLE));
-        } else if (editTextExpirationDate.getText().equals("")) {
-            textViewExpirationDateWarning.setVisibility((View.VISIBLE));
-            textViewExpirationDateWarning.setText(R.string.textViewReleaseDateWarning);
         }
     }
 }
